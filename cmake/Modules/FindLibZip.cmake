@@ -11,14 +11,15 @@ pkg_check_modules(PC_LIBZIP QUIET libzip)
 
 find_path(LIBZIP_INCLUDE_DIR_ZIP
     NAMES zip.h
-    HINTS ${PC_LIBZIP_INCLUDE_DIRS})
+    HINTS ${PC_LIBZIP_INCLUDE_DIRS} /home/musuroi/anaconda3/include)
 
 find_path(LIBZIP_INCLUDE_DIR_ZIPCONF
     NAMES zipconf.h
-    HINTS ${PC_LIBZIP_INCLUDE_DIRS})
+    HINTS ${PC_LIBZIP_INCLUDE_DIRS}} /home/musuroi/anaconda3/include)
 
 find_library(LIBZIP_LIBRARY
-    NAMES zip)
+    NAMES zip
+    HINTS /home/musuroi/anaconda3/lib)
 
 include(FindPackageHandleStandardArgs)
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(
